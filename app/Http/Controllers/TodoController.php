@@ -25,13 +25,13 @@ class TodoController extends Controller
         $param = [
             'content' => $request->content
         ];
-        DB::table('todocontents')->where('id', $request->id)->update($param);
+        DB::table('todos')->where('id', $request->id)->update($param);
         return redirect('/');
     }
 
     public function delete(Request $request)
     {
-        DB::table('todocontents')->where('id', $request->id)->delete();
+        DB::table('todos')->where('id', $request->id)->delete();
         return redirect('/');
     }
 }
