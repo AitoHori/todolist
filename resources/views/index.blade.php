@@ -30,8 +30,8 @@
         {{$item->created_at}}
       </td>
       <td>
-        <input type="text" class="input_content" name="content" value={{$item->content}}>
-        <input type="hidden" class="input-update" name={{$item->id}}>
+        <input type="text" class="input_content" name="id" value="{{$item->content}}">
+        <input type="hidden" class="input-update" name="id" value="{{$item->content}}">
       </td>
       <td>
         <button type="submit" class="update">更新</button>
@@ -40,7 +40,7 @@
       <td>
         <form action="/todo/delete"  method="post">
           @csrf
-          <input type="hidden" class="input-delete" name={{$item->id}}>
+          <input type="hidden" class="input-delete" name="id" value="{{$item->content}}">
         <button class="delete">削除</button>
         </form>
       </td>
