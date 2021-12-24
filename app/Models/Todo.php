@@ -13,7 +13,7 @@ class Todo extends Model
     protected $fillable = ['content',];
 
     public static $rules = array(
-        'content' => 'required',
+        'content' => ['required', 'string', 'max:20'],
     );
     public function index()
     {

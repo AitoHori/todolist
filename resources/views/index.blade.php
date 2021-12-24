@@ -10,6 +10,13 @@
 <body>
   <div class="todolist">
     <h1>Todo List</h1>
+    @if (count($errors) > 0)
+    <ul>
+      @foreach ($errors->all() as $error)
+        <li>{{$error}}</li>
+      @endforeach
+    </ul>
+    @endif
     <form  action="/todo/create" method="post">
       @csrf
       <input class="top-form" type="text" name="content" >

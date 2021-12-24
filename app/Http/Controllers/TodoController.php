@@ -14,6 +14,7 @@ class TodoController extends Controller
     }
     public function create(Request $request)
     {
+        $this->validate($request, Todo::$rules);
         $param = [
             'content' => $request->content
         ];
@@ -22,6 +23,7 @@ class TodoController extends Controller
     }
     public function update(Request $request)
     {
+        $this->validate($request, Todo::$rules);
         $param = [
             'content' => $request->content
         ];
